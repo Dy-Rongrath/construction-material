@@ -1,4 +1,4 @@
-import SignUp from "@/components/features/Auth/SignUp";
+import Signup from "@/components/features/Auth/Signup";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function SignUpPage() {
-  return <SignUp />;
+  return <Signup />;
 }

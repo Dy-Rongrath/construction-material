@@ -1,4 +1,4 @@
-import MyAccount from "@/components/features/Account/MyAccount";
+import MyAccount from "@/components/features/MyAccount";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
