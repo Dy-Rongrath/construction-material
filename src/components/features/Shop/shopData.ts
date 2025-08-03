@@ -1,5 +1,9 @@
 import { Product } from "@/types/product";
-const shopData: Product[] = [
+import { SHOP_CONFIG } from "@/config/shopConfig";
+import constructionMaterials from "./constructionData";
+
+// Electronics data (keeping for flexibility)
+const electronicsData: Product[] = [
   {
     title: "Havit HV-G69 USB Gamepad",
     reviews: 15,
@@ -162,4 +166,50 @@ const shopData: Product[] = [
   },
 ];
 
+// Clothing data (example for flexibility)
+const clothingData: Product[] = [
+  {
+    id: 1,
+    title: "Premium Cotton T-Shirt",
+    reviews: 124,
+    price: 29.99,
+    discountedPrice: 24.99,
+    image: "/images/products/clothing-01.jpg",
+    category: "mens-clothing",
+    rating: 4.5,
+    imgs: {
+      thumbnails: [
+        "/images/products/clothing-01.jpg",
+        "/images/products/clothing-02.jpg",
+        "/images/products/clothing-03.jpg",
+      ],
+      previews: [
+        "/images/products/clothing-01.jpg",
+        "/images/products/clothing-02.jpg",
+        "/images/products/clothing-03.jpg",
+      ],
+    },
+  },
+  // Add more clothing items as needed
+];
+
+// Function to get products based on current shop type
+export function getShopProducts(): Product[] {
+  switch (SHOP_CONFIG.shopType) {
+    case 'construction':
+      return constructionMaterials;
+    case 'electronics':
+      return electronicsData;
+    case 'clothing':
+      return clothingData;
+    default:
+      return constructionMaterials; // Default to construction materials
+  }
+}
+
+// Main export - dynamically returns products based on shop configuration
+const shopData = getShopProducts();
 export default shopData;
+
+// Named exports for specific data sets (for flexibility)
+export { constructionMaterials, electronicsData, clothingData };
