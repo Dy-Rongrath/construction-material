@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { SHOP_CONFIG } from "@/config/shopConfig";
 
 const CounDown = () => {
   const [days, setDays] = useState(0);
@@ -9,6 +10,34 @@ const CounDown = () => {
   const [seconds, setSeconds] = useState(0);
 
   const deadline = "December, 31, 2024";
+
+  // Get countdown content based on shop type
+  const getCountdownContent = () => {
+    switch (SHOP_CONFIG.shopType) {
+      case 'construction':
+        return {
+          title: "Build Your Dream Project",
+          description: "Professional-grade Portland cement for all construction needs."
+        };
+      case 'electronics':
+        return {
+          title: "Enhance Your Music Experience",
+          description: "The Havit H206d is a wired PC headphone."
+        };
+      case 'clothing':
+        return {
+          title: "Fashion Sale Event",
+          description: "Discover the latest trends in our seasonal collection."
+        };
+      default:
+        return {
+          title: "Special Offer",
+          description: "Don't miss out on our amazing deals."
+        };
+    }
+  };
+
+  const content = getCountdownContent();
 
   const getTime = () => {
     const time = Date.parse(deadline) - Date.now();
@@ -36,10 +65,10 @@ const CounDown = () => {
             </span>
 
             <h2 className="font-bold text-dark text-xl lg:text-heading-4 xl:text-heading-3 mb-3">
-              Enhance Your Music Experience
+              {content.title}
             </h2>
 
-            <p>The Havit H206d is a wired PC headphone.</p>
+            <p>{content.description}</p>
 
             {/* <!-- Countdown timer --> */}
             <div

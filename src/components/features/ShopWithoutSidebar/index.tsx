@@ -5,9 +5,11 @@ import ProductSkeleton from "@/ui/Common/ProductSkeleton";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
 import CustomSelect from "../ShopWithSidebar/CustomSelect";
-import shopData from "../Shop/shopData";
+import { getShopProducts } from "../Shop/shopData";
 
 const ShopWithoutSidebar = () => {
+  // Get current shop products
+  const shopProducts = getShopProducts();
   const [productStyle, setProductStyle] = useState("grid");
   const [isLoading, setIsLoading] = useState(true);
 
@@ -148,7 +150,7 @@ const ShopWithoutSidebar = () => {
                     />
                   </div>
                 ) : (
-                  shopData.map((item, key) =>
+                  shopProducts.map((item, key) =>
                     productStyle === "grid" ? (
                       <SingleGridItem item={item} key={key} />
                     ) : (

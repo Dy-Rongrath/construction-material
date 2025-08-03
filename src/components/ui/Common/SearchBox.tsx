@@ -168,28 +168,26 @@ const SearchBox: React.FC<SearchBoxProps> = ({
           id="search-btn"
           aria-label="Search"
           disabled={isLoading || isSearching || !searchQuery.trim()}
-          className={`flex items-center justify-center w-12 h-11 rounded-r-[5px] border border-blue border-l-0 ease-out duration-200 ${
+          className={`flex items-center justify-center w-12 h-11 rounded-r-[5px] border border-blue border-l-0 ease-out duration-200 transition-all ${
             (isLoading || isSearching || !searchQuery.trim())
-              ? 'bg-gray-4 text-gray-6 cursor-not-allowed'
-              : 'bg-blue text-white hover:bg-blue-dark'
+              ? 'bg-gray-2 text-gray-5 cursor-not-allowed opacity-60'
+              : 'bg-blue text-white hover:bg-blue-dark hover:shadow-md active:scale-95'
           }`}
         >
           {(isLoading || isSearching) ? (
-            <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
+            <div className="animate-spin h-4 w-4 border-2 border-gray-5 border-t-transparent rounded-full"></div>
           ) : (
             <svg
-              className="fill-current"
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
+              className="fill-current w-4 h-4"
+              viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
-                d="M8.25 1.5C4.52208 1.5 1.5 4.52208 1.5 8.25C1.5 11.9779 4.52208 15 8.25 15C9.92203 15 11.4573 14.3735 12.6431 13.3431L15.6431 16.3431C15.9734 16.6734 16.5266 16.6734 16.8569 16.3431C17.1872 16.0128 17.1872 15.4596 16.8569 15.1293L13.8569 12.1293C14.8873 10.9435 15.5138 9.40826 15.5138 7.73623C15.5138 4.00831 12.4917 0.986229 8.76381 0.986229C5.03589 0.986229 2.01381 4.00831 2.01381 7.73623C2.01381 11.4641 5.03589 14.4862 8.76381 14.4862C10.436 14.4862 11.9713 13.8597 13.1571 12.8293L16.1571 15.8293C16.4874 16.1596 17.0406 16.1596 17.3709 15.8293C17.7012 15.499 17.7012 14.9458 17.3709 14.6155L14.3709 11.6155C15.4013 10.4297 16.0278 8.89448 16.0278 7.22245C16.0278 3.49453 12.0057 0.472443 8.27778 0.472443C4.54986 0.472443 1.52778 3.49453 1.52778 7.22245C1.52778 10.9504 4.54986 13.9725 8.27778 13.9725Z"
-                fill=""
+                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                fill="currentColor"
               />
             </svg>
           )}

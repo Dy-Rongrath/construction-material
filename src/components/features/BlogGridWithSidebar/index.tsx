@@ -6,35 +6,18 @@ import SearchForm from "../Blog/SearchForm";
 import LatestPosts from "../Blog/LatestPosts";
 import LatestProducts from "../Blog/LatestProducts";
 import Categories from "../Blog/Categories";
-import shopData from "../Shop/shopData"; 
+import { getShopProducts } from "../Shop/shopData"; 
+import { SHOP_CONFIG } from "@/config/shopConfig";
  
 const BlogGridWithSidebar = () => {
-  const categories = [
-    {
-      name: "Desktop",
-      products: 10,
-    },
-    {
-      name: "Laptop",
-      products: 12,
-    },
-    {
-      name: "Monitor",
-      products: 30,
-    },
-    {
-      name: "UPS",
-      products: 23,
-    },
-    {
-      name: "Phone",
-      products: 10,
-    },
-    {
-      name: "Watch",
-      products: 13,
-    },
-  ];
+  // Get current shop products
+  const shopProducts = getShopProducts();
+  
+  // Get categories from shop configuration
+  const categories = SHOP_CONFIG.categories[SHOP_CONFIG.shopType].map(cat => ({
+    name: cat.name,
+    products: cat.products,
+  }));
 
   return (
     <>
@@ -179,7 +162,7 @@ const BlogGridWithSidebar = () => {
               <LatestPosts blogs={blogData} />
 
               {/* <!-- Latest Products box --> */}
-              <LatestProducts products={shopData} />
+              <LatestProducts products={shopProducts} />
 
               {/* <!-- Popular Category box --> */}
               <Categories categories={categories} />

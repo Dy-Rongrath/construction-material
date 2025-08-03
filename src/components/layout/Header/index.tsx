@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { selectTotalPrice } from "@/store/redux/features/cart-slice";
 import { useCartModalContext } from "@/hooks/context/CartSidebarModalContext";
 import Image from "next/image";
+import { SHOP_CONFIG } from "@/config/shopConfig";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
@@ -36,28 +37,63 @@ const Header = () => {
     window.addEventListener("scroll", handleStickyMenu);
   });
 
+  // Get categories dynamically based on shop type
+  const currentCategories = SHOP_CONFIG.categories[SHOP_CONFIG.shopType];
   const options = [
     { label: "All Categories", value: "0" },
-    { label: "Desktop", value: "1" },
-    { label: "Laptop", value: "2" },
-    { label: "Monitor", value: "3" },
-    { label: "Phone", value: "4" },
-    { label: "Watch", value: "5" },
-    { label: "Mouse", value: "6" },
-    { label: "Tablet", value: "7" },
+    ...currentCategories.slice(0, 7).map((category, index) => ({
+      label: category.name,
+      value: (index + 1).toString()
+    }))
   ];
 
-  // Sample product suggestions - in a real app, this would come from an API
-  const productSuggestions = [
-    "Construction Tools",
-    "Building Materials", 
-    "Safety Equipment",
-    "Power Tools",
-    "Hand Tools",
-    "Concrete Mixer",
-    "Steel Reinforcement",
-    "Welding Equipment"
-  ];
+  // Get product suggestions based on shop type
+  const getProductSuggestions = () => {
+    switch (SHOP_CONFIG.shopType) {
+      case 'construction':
+        return [
+          "Construction Tools",
+          "Building Materials", 
+          "Safety Equipment",
+          "Power Tools",
+          "Hand Tools",
+          "Concrete Mixer",
+          "Steel Reinforcement",
+          "Welding Equipment"
+        ];
+      case 'electronics':
+        return [
+          "Smartphones",
+          "Laptops",
+          "Gaming Consoles",
+          "Tablets",
+          "Headphones",
+          "Smart Watches",
+          "Cameras",
+          "Keyboards"
+        ];
+      case 'clothing':
+        return [
+          "T-Shirts",
+          "Jeans",
+          "Dresses",
+          "Shoes",
+          "Jackets",
+          "Accessories",
+          "Bags",
+          "Hats"
+        ];
+      default:
+        return [
+          "Featured Products",
+          "Best Sellers",
+          "New Arrivals",
+          "Sale Items"
+        ];
+    }
+  };
+
+  const productSuggestions = getProductSuggestions();
 
   // Simulate loading suggestions from API
   const loadSuggestions = async (query: string): Promise<string[]> => {

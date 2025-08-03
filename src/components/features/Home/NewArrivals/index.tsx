@@ -1,9 +1,45 @@
 import React from "react";
 import Link from "next/link";
 import ProductItem from "@/ui/Common/ProductItem";
-import shopData from "@/features/Shop/shopData";
+import { getShopProducts } from "@/components/features/Shop/shopData";
+import { SHOP_CONFIG } from "@/config/shopConfig";
 
 const NewArrival = () => {
+  // Get current shop products
+  const shopProducts = getShopProducts();
+
+  // Get shop-specific content
+  const getContentForShopType = () => {
+    switch (SHOP_CONFIG.shopType) {
+      case 'construction':
+        return {
+          weekLabel: "This Week's",
+          sectionTitle: "Featured Materials",
+          description: "Latest construction materials and supplies"
+        };
+      case 'electronics':
+        return {
+          weekLabel: "This Week's",
+          sectionTitle: "New Arrivals",
+          description: "Latest electronics and gadgets"
+        };
+      case 'clothing':
+        return {
+          weekLabel: "This Season's",
+          sectionTitle: "New Collection",
+          description: "Latest fashion trends"
+        };
+      default:
+        return {
+          weekLabel: "This Week's",
+          sectionTitle: "Featured Products",
+          description: "Latest products"
+        };
+    }
+  };
+
+  const content = getContentForShopType();
+
   return (
     <section className="overflow-hidden pt-15">
       <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
@@ -30,10 +66,10 @@ const NewArrival = () => {
                   strokeLinecap="round"
                 />
               </svg>
-              This Week’s
+              {content.weekLabel}
             </span>
             <h2 className="font-semibold text-xl xl:text-heading-5 text-dark">
-              New Arrivals
+              {content.sectionTitle}
             </h2>
           </div>
 
@@ -46,8 +82,8 @@ const NewArrival = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-7.5 gap-y-9">
-          {/* <!-- New Arrivals item --> */}
-          {shopData.map((item, key) => (
+          {/* <!-- Featured items --> */}
+          {shopProducts.slice(0, 8).map((item, key) => (
             <ProductItem item={item} key={key} />
           ))}
         </div>

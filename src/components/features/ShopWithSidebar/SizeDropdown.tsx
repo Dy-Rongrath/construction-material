@@ -1,8 +1,28 @@
 "use client";
 import React, { useState } from "react";
+import { SHOP_CONFIG } from "@/config/shopConfig";
 
 const SizeDropdown = () => {
   const [toggleDropdown, setToggleDropdown] = useState(true);
+  
+  // Get sizes from shop configuration
+  const currentFilters = SHOP_CONFIG.filters[SHOP_CONFIG.shopType];
+  const sizes = 'sizes' in currentFilters ? currentFilters.sizes : [];
+  
+  // Generate size label based on shop type
+  const getSizeLabel = () => {
+    switch (SHOP_CONFIG.shopType) {
+      case 'construction':
+        return 'Size/Capacity';
+      case 'electronics':
+        return 'Size';
+      case 'clothing':
+        return 'Size';
+      default:
+        return 'Size';
+    }
+  };
+
   return (
     <div className="bg-white shadow-1 rounded-lg">
       <div
@@ -11,7 +31,7 @@ const SizeDropdown = () => {
           toggleDropdown && "shadow-filter"
         }`}
       >
-        <p className="text-dark">Size</p>
+        <p className="text-dark">{getSizeLabel()}</p>
         <button
           onClick={() => setToggleDropdown(!toggleDropdown)}
           aria-label="button for size dropdown"
@@ -43,53 +63,28 @@ const SizeDropdown = () => {
           toggleDropdown ? "flex" : "hidden"
         }`}
       >
-        <label
-          htmlFor="sizeM"
-          className="cursor-pointer select-none flex items-center rounded-md bg-blue text-white hover:bg-blue hover:text-white"
-        >
-          <div className="relative">
-            <input type="radio" name="size" id="sizeM" className="sr-only" />
-            <div className="text-custom-sm py-[5px] px-3.5 rounded-[5px]">
-              M
+        {sizes.map((size, index) => (
+          <label
+            key={size}
+            htmlFor={`size${index}`}
+            className={`cursor-pointer select-none flex items-center rounded-md hover:bg-blue hover:text-white ${
+              index === 0 ? 'bg-blue text-white' : ''
+            }`}
+          >
+            <div className="relative">
+              <input 
+                type="radio" 
+                name="size" 
+                id={`size${index}`} 
+                className="sr-only" 
+                defaultChecked={index === 0}
+              />
+              <div className="text-custom-sm py-[5px] px-3.5 rounded-[5px]">
+                {size}
+              </div>
             </div>
-          </div>
-        </label>
-
-        <label
-          htmlFor="sizeL"
-          className="cursor-pointer select-none flex items-center rounded-md hover:bg-blue hover:text-white"
-        >
-          <div className="relative">
-            <input type="radio" name="size" id="sizeL" className="sr-only" />
-            <div className="text-custom-sm py-[5px] px-3.5 rounded-[5px]">
-              L
-            </div>
-          </div>
-        </label>
-
-        <label
-          htmlFor="sizeXL"
-          className="cursor-pointer select-none flex items-center rounded-md hover:bg-blue hover:text-white"
-        >
-          <div className="relative">
-            <input type="radio" name="size" id="sizeXL" className="sr-only" />
-            <div className="text-custom-sm py-[5px] px-3.5 rounded-[5px]">
-              XL
-            </div>
-          </div>
-        </label>
-
-        <label
-          htmlFor="sizeXXL"
-          className="cursor-pointer select-none flex items-center rounded-md hover:bg-blue hover:text-white"
-        >
-          <div className="relative">
-            <input type="radio" name="size" id="sizeXXL" className="sr-only" />
-            <div className="text-custom-sm py-[5px] px-3.5 rounded-[5px]">
-              XXL
-            </div>
-          </div>
-        </label>
+          </label>
+        ))}
       </div>
     </div>
   );

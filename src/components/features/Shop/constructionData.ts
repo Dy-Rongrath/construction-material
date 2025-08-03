@@ -11,17 +11,15 @@ export const constructionMaterials: Product[] = [
     discount: 11,
     rating: 4.8,
     reviews: 156,
-    image: "/images/products/cement-01.jpg",
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/cement-01.jpg",
-        "/images/products/cement-02.jpg",
-        "/images/products/cement-03.jpg"
+        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/cement-01.jpg",
-        "/images/products/cement-02.jpg",
-        "/images/products/cement-03.jpg"
+        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -35,17 +33,15 @@ export const constructionMaterials: Product[] = [
     discount: 9,
     rating: 4.7,
     reviews: 89,
-    image: "/images/products/rebar-01.jpg",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/rebar-01.jpg",
-        "/images/products/rebar-02.jpg",
-        "/images/products/rebar-03.jpg"
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1605732985877-7d5e9e7ba8b8?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/rebar-01.jpg",
-        "/images/products/rebar-02.jpg",
-        "/images/products/rebar-03.jpg"
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1605732985877-7d5e9e7ba8b8?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -59,17 +55,15 @@ export const constructionMaterials: Product[] = [
     discount: 11,
     rating: 4.6,
     reviews: 234,
-    image: "/images/products/bricks-01.jpg",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/bricks-01.jpg",
-        "/images/products/bricks-02.jpg",
-        "/images/products/bricks-03.jpg"
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/bricks-01.jpg",
-        "/images/products/bricks-02.jpg",
-        "/images/products/bricks-03.jpg"
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -83,17 +77,15 @@ export const constructionMaterials: Product[] = [
     discount: 10,
     rating: 4.5,
     reviews: 67,
-    image: "/images/products/roofing-01.jpg",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/roofing-01.jpg",
-        "/images/products/roofing-02.jpg",
-        "/images/products/roofing-03.jpg"
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/roofing-01.jpg",
-        "/images/products/roofing-02.jpg",
-        "/images/products/roofing-03.jpg"
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -107,17 +99,15 @@ export const constructionMaterials: Product[] = [
     discount: 10,
     rating: 4.9,
     reviews: 178,
-    image: "/images/products/electrical-01.jpg",
+    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/electrical-01.jpg",
-        "/images/products/electrical-02.jpg",
-        "/images/products/electrical-03.jpg"
+        "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/electrical-01.jpg",
-        "/images/products/electrical-02.jpg",
-        "/images/products/electrical-03.jpg"
+        "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -131,17 +121,15 @@ export const constructionMaterials: Product[] = [
     discount: 11,
     rating: 4.4,
     reviews: 92,
-    image: "/images/products/plumbing-01.jpg",
+    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/plumbing-01.jpg",
-        "/images/products/plumbing-02.jpg",
-        "/images/products/plumbing-03.jpg"
+        "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/plumbing-01.jpg",
-        "/images/products/plumbing-02.jpg",
-        "/images/products/plumbing-03.jpg"
+        "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -155,17 +143,15 @@ export const constructionMaterials: Product[] = [
     discount: 14,
     rating: 4.8,
     reviews: 203,
-    image: "/images/products/tools-01.jpg",
+    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/tools-01.jpg",
-        "/images/products/tools-02.jpg",
-        "/images/products/tools-03.jpg"
+        "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1558618663-fcd25c85cd64?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/tools-01.jpg",
-        "/images/products/tools-02.jpg",
-        "/images/products/tools-03.jpg"
+        "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1558618663-fcd25c85cd64?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -179,17 +165,15 @@ export const constructionMaterials: Product[] = [
     discount: 14,
     rating: 4.6,
     reviews: 145,
-    image: "/images/products/safety-01.jpg",
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/safety-01.jpg",
-        "/images/products/safety-02.jpg",
-        "/images/products/safety-03.jpg"
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/safety-01.jpg",
-        "/images/products/safety-02.jpg",
-        "/images/products/safety-03.jpg"
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -203,17 +187,15 @@ export const constructionMaterials: Product[] = [
     discount: 13,
     rating: 4.7,
     reviews: 58,
-    image: "/images/products/mixer-01.jpg",
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/mixer-01.jpg",
-        "/images/products/mixer-02.jpg",
-        "/images/products/mixer-03.jpg"
+        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/mixer-01.jpg",
-        "/images/products/mixer-02.jpg",
-        "/images/products/mixer-03.jpg"
+        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -227,17 +209,15 @@ export const constructionMaterials: Product[] = [
     discount: 12,
     rating: 4.5,
     reviews: 89,
-    image: "/images/products/membrane-01.jpg",
+    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/membrane-01.jpg",
-        "/images/products/membrane-02.jpg",
-        "/images/products/membrane-03.jpg"
+        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/membrane-01.jpg",
-        "/images/products/membrane-02.jpg",
-        "/images/products/membrane-03.jpg"
+        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -251,17 +231,15 @@ export const constructionMaterials: Product[] = [
     discount: 10,
     rating: 4.3,
     reviews: 112,
-    image: "/images/products/tiles-01.jpg",
+    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/tiles-01.jpg",
-        "/images/products/tiles-02.jpg",
-        "/images/products/tiles-03.jpg"
+        "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/tiles-01.jpg",
-        "/images/products/tiles-02.jpg",
-        "/images/products/tiles-03.jpg"
+        "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&crop=center",
       ]
     }
   },
@@ -275,17 +253,15 @@ export const constructionMaterials: Product[] = [
     discount: 9,
     rating: 4.4,
     reviews: 98,
-    image: "/images/products/paint-01.jpg",
+    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&h=400&fit=crop&crop=center",
     imgs: {
       thumbnails: [
-        "/images/products/paint-01.jpg",
-        "/images/products/paint-02.jpg",
-        "/images/products/paint-03.jpg"
+        "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=200&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=200&h=200&fit=crop&crop=center",
       ],
       previews: [
-        "/images/products/paint-01.jpg",
-        "/images/products/paint-02.jpg",
-        "/images/products/paint-03.jpg"
+        "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=600&fit=crop&crop=center",
       ]
     }
   }

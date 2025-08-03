@@ -2,9 +2,11 @@ import React from "react";
 import SingleItem from "./SingleItem";
 import Image from "next/image";
 import Link from "next/link";
-import shopData from "@/features/Shop/shopData";
+import { getShopProducts } from "@/components/features/Shop/shopData";
 
 const BestSeller = () => {
+  // Get current shop products
+  const shopProducts = getShopProducts();
   return (
     <section className="overflow-hidden">
       <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
@@ -28,7 +30,7 @@ const BestSeller = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7.5">
           {/* <!-- Best Sellers item --> */}
-          {shopData.slice(1, 7).map((item, key) => (
+          {shopProducts.slice(1, 7).map((item, key) => (
             <SingleItem item={item} key={key} />
           ))}
         </div>

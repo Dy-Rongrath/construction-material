@@ -1,11 +1,28 @@
 "use client";
 import React, { useState } from "react";
+import { SHOP_CONFIG } from "@/config/shopConfig";
 
 const ColorsDropdwon = () => {
   const [toggleDropdown, setToggleDropdown] = useState(true);
-  const [activeColor, setActiveColor] = useState("blue");
+  
+  // Get colors from shop configuration
+  const currentFilters = SHOP_CONFIG.filters[SHOP_CONFIG.shopType];
+  const colors = 'colors' in currentFilters ? currentFilters.colors : [];
+  const [activeColor, setActiveColor] = useState(colors[0] || "blue");
 
-  const colors = ["red", "blue", "orange", "pink", "purple"];
+  // Generate color label based on shop type
+  const getColorLabel = () => {
+    switch (SHOP_CONFIG.shopType) {
+      case 'construction':
+        return 'Material Color';
+      case 'electronics':
+        return 'Colors';
+      case 'clothing':
+        return 'Colors';
+      default:
+        return 'Colors';
+    }
+  };
 
   return (
     <div className="bg-white shadow-1 rounded-lg">
@@ -15,7 +32,7 @@ const ColorsDropdwon = () => {
           toggleDropdown && "shadow-filter"
         }`}
       >
-        <p className="text-dark">Colors</p>
+        <p className="text-dark">{getColorLabel()}</p>
         <button
           aria-label="button for colors dropdown"
           className={`text-dark ease-out duration-200 ${

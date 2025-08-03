@@ -9,7 +9,8 @@ import ColorsDropdwon from "./ColorsDropdwon";
 import PriceDropdown from "./PriceDropdown";
 import ProductSkeleton from "@/ui/Common/ProductSkeleton";
 import LoadingSpinner from "@/ui/Common/LoadingSpinner";
-import shopData from "../Shop/shopData";
+import { getShopProducts } from "../Shop/shopData";
+import { SHOP_CONFIG } from "@/config/shopConfig";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
 
@@ -19,6 +20,9 @@ const ShopWithSidebar = () => {
   const [stickyMenu, setStickyMenu] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isFilterLoading, setIsFilterLoading] = useState(false);
+
+  // Get current shop products
+  const shopProducts = getShopProducts();
 
   const handleStickyMenu = () => {
     if (window.scrollY >= 80) {
@@ -34,53 +38,36 @@ const ShopWithSidebar = () => {
     { label: "Old Products", value: "2" },
   ];
 
-  const categories = [
-    {
-      name: "Desktop",
-      products: 10,
-      isRefined: true,
-    },
-    {
-      name: "Laptop",
-      products: 12,
-      isRefined: false,
-    },
-    {
-      name: "Monitor",
-      products: 30,
-      isRefined: false,
-    },
-    {
-      name: "UPS",
-      products: 23,
-      isRefined: false,
-    },
-    {
-      name: "Phone",
-      products: 10,
-      isRefined: false,
-    },
-    {
-      name: "Watch",
-      products: 13,
-      isRefined: false,
-    },
-  ];
+  // Get categories from shop configuration
+  const categories = SHOP_CONFIG.categories[SHOP_CONFIG.shopType].map(cat => ({
+    name: cat.name,
+    products: cat.products,
+    isRefined: false,
+  }));
 
-  const genders = [
-    {
-      name: "Men",
-      products: 10,
-    },
-    {
-      name: "Women",
-      products: 23,
-    },
-    {
-      name: "Unisex",
-      products: 8,
-    },
-  ];
+  // Get filters from shop configuration
+  const currentFilters = SHOP_CONFIG.filters[SHOP_CONFIG.shopType];
+  
+  // Generate gender/application filters based on shop type
+  const genders = SHOP_CONFIG.shopType === 'construction' 
+    ? ('applications' in currentFilters ? currentFilters.applications.map((app: string) => ({
+        name: app,
+        products: Math.floor(Math.random() * 30) + 5, // Random product count
+      })) : [])
+    : [
+        {
+          name: "Men",
+          products: 10,
+        },
+        {
+          name: "Women",
+          products: 23,
+        },
+        {
+          name: "Unisex",
+          products: 8,
+        },
+      ];
 
   useEffect(() => {
     window.addEventListener("scroll", handleStickyMenu);
@@ -319,7 +306,7 @@ const ShopWithSidebar = () => {
                     />
                   </div>
                 ) : (
-                  shopData.map((item, key) =>
+                  shopProducts.map((item, key) =>
                     productStyle === "grid" ? (
                       <SingleGridItem item={item} key={key} />
                     ) : (
