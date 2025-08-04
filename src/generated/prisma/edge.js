@@ -181,7 +181,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/rongrath/Desktop/NextJs/construction-material-shop/src/generated/prisma",
+      "value": "C:\\Users\\Admin\\Desktop\\construction-material\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -190,12 +190,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/rongrath/Desktop/NextJs/construction-material-shop/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\Admin\\Desktop\\construction-material\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

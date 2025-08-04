@@ -7,7 +7,7 @@ import SingleListItem from "../Shop/SingleListItem";
 import CustomSelect from "../ShopWithSidebar/CustomSelect";
 import shopData from "../Shop/shopData";
 
-const ShopWithoutSidebar = () => {
+const Shop = () => {
   const [productStyle, setProductStyle] = useState("grid");
   const [isLoading, setIsLoading] = useState(true);
 
@@ -285,4 +285,4 @@ const ShopWithoutSidebar = () => {
   );
 };
 
-export default ShopWithoutSidebar;
+export default Shop;
